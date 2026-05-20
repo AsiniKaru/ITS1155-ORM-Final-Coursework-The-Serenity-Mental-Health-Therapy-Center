@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.the_serenity_mental_health_therapy_center.controller.PatientTherapyHistoryController">
+    <children>
+        <Label layoutX="202.0" layoutY="38.0" text="Patient Theropy History">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <Separator layoutX="203.0" layoutY="79.0" prefWidth="200.0" />
+        <TableView fx:id="tblTherapySession" layoutX="35.0" layoutY="132.0" prefHeight="193.0" prefWidth="537.0">
+            <columns>
+                <TableColumn fx:id="colTherapy" prefWidth="96.0" text="Therapy" />
+                <TableColumn fx:id="colPatient" prefWidth="97.0" text="Patient" />
+                <TableColumn fx:id="colProgram" prefWidth="133.0" text="Program" />
+                <TableColumn fx:id="colCost" prefWidth="100.0" text="Cost" />
+                <TableColumn fx:id="colDescription" prefWidth="110.0" text="Decription" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>

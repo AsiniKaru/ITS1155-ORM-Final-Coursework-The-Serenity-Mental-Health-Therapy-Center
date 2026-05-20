@@ -1,0 +1,150 @@
+/* Overall root style with a soft gradient background */
+AnchorPane {
+    -fx-background-color: linear-gradient(to bottom right, #f4f4f8, #ffffff);
+}
+
+/* Header style: large, bold text with modern spacing */
+.header {
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #00796b;
+    -fx-alignment: center;
+    -fx-padding: 15;
+}
+
+/* Subheader for section titles in the right pane */
+.subheader {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #004d40;
+    -fx-padding: 5 0 5 0;
+}
+
+/* Input fields with rounded corners and soft border */
+.input-field {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #b2dfdb;
+    -fx-border-width: 1;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 10 15;
+    -fx-font-size: 14px;
+}
+
+/* Focus effect for input fields */
+.input-field:focused {
+    -fx-border-color: #00796b;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 4, 0.0, 0, 2);
+}
+
+/* Table view styling for therapy programs */
+.modern-table {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.modern-table .column-header-background {
+    -fx-background-color: #b2dfdb;
+    -fx-background-radius: 8 8 0 0;
+}
+
+.modern-table .table-row-cell {
+    -fx-background-color: transparent;
+}
+
+.modern-table .table-row-cell:hover {
+    -fx-background-color: rgba(0, 121, 107, 0.1);
+}
+
+.modern-table .table-row-cell:selected {
+    -fx-text-fill: #004d40;
+}
+
+/* Billing summary styling */
+.billing-label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #004d40;
+}
+
+.billing-value {
+    -fx-font-size: 16px;
+    -fx-text-fill: #00796b;
+    -fx-font-weight: bold;
+}
+
+/* Action buttons with modern flat style and hover effect */
+.action-button {
+    -fx-background-color: #009688;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-padding: 8 17;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 4, 0.0, 2, 2);
+}
+
+.action-button:hover {
+    -fx-background-color: #00796b;
+}
+
+/* Additional Table styling - does not alter prefWidth/Height */
+.additional-table {
+    -fx-background-color: transparent;
+    -fx-border-color: #e0e0e0; /* light gray border */
+    -fx-border-width: 1;
+    -fx-border-radius: 5;
+}
+
+/* Header styling for the additional table */
+.additional-table .column-header-background {
+    -fx-background-color: #e8f5e9; /* light green background for header */
+    -fx-background-radius: 8 8 0 0;
+}
+
+/* Row styling */
+.additional-table .table-row-cell {
+    -fx-background-color: transparent;
+}
+
+/* Hover effect for rows */
+.additional-table .table-row-cell:hover {
+    -fx-background-color: rgba(76, 175, 80, 0.1); /* subtle green hover */
+}
+
+.table-view .table-row-cell:selected .table-cell {
+    -fx-text-fill: #004d40;
+}
+
+
+
+.add-button {
+    -fx-background-color: #8FBC8F;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-padding: 4 10;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 4, 0.0, 2, 2);
+}
+
+.add-button:hover {
+    -fx-background-color: #556B2F;
+}
+
+.input-field-txt-area {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #b2dfdb;
+    -fx-border-width: 1;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-font-size: 14px;
+}
+
+/* Focus effect for input fields */
+.input-field-txt-area:focused {
+    -fx-border-color: #00796b;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 4, 0.0, 0, 2);
+}
