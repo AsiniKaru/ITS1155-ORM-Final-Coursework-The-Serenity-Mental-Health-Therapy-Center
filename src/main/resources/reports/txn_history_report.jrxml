@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="txn_history_report"
+              pageWidth="595"
+              pageHeight="842"
+              columnWidth="555"
+              leftMargin="20"
+              rightMargin="20"
+              topMargin="20"
+              bottomMargin="20"
+              uuid="c7c6d5e4-f3a2-b1c0-d9e8-7f6a5b4c3d2e">
+
+    <parameter name="reportDate" class="java.lang.String"/>
+
+    <field name="paymentId" class="java.lang.String"/>
+    <field name="invoiceNumber" class="java.lang.String"/>
+    <field name="patientName" class="java.lang.String"/>
+    <field name="paymentDate" class="java.lang.String"/>
+    <field name="paymentMethod" class="java.lang.String"/>
+    <field name="paymentStatus" class="java.lang.String"/>
+    <field name="amount" class="java.lang.Double"/>
+
+    <title>
+        <band height="120">
+            <rectangle>
+                <reportElement x="0" y="0" width="555" height="75" forecolor="#2C7A7B" backcolor="#2C7A7B"/>
+            </rectangle>
+            <staticText>
+                <reportElement x="10" y="10" width="535" height="30" forecolor="#FFFFFF"/>
+                <textElement textAlignment="Center">
+                    <font fontName="SansSerif" size="22" isBold="true"/>
+                </textElement>
+                <text><![CDATA[THE SERENITY MENTAL HEALTH THERAPY CENTER]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="10" y="40" width="535" height="20" forecolor="#FFF6DE"/>
+                <textElement textAlignment="Center">
+                    <font fontName="SansSerif" size="12" isItalic="true"/>
+                </textElement>
+                <text><![CDATA[Daily Transaction History]]></text>
+            </staticText>
+
+            <staticText>
+                <reportElement x="5" y="90" width="100" height="20" forecolor="#333333"/>
+                <textElement>
+                    <font fontName="SansSerif" size="10" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Transaction Date:]]></text>
+            </staticText>
+            
+            <textField>
+                <reportElement x="110" y="90" width="200" height="20" forecolor="#333333"/>
+                <textElement>
+                    <font fontName="SansSerif" size="10"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{reportDate}]]></textFieldExpression>
+            </textField>
+            
+            <line>
+                <reportElement x="0" y="115" width="555" height="1" forecolor="#2C7A7B"/>
+                <graphicElement>
+                    <pen lineWidth="1.5"/>
+                </graphicElement>
+            </line>
+        </band>
+    </title>
+
+    <columnHeader>
+        <band height="25">
+            <rectangle>
+                <reportElement x="0" y="0" width="555" height="25" forecolor="#2C7A7B" backcolor="#2C7A7B"/>
+            </rectangle>
+            <staticText>
+                <reportElement x="5" y="5" width="80" height="15" forecolor="#FFFFFF"/>
+                <textElement>
+                    <font fontName="SansSerif" size="9" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Payment ID]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="90" y="5" width="80" height="15" forecolor="#FFFFFF"/>
+                <textElement>
+                    <font fontName="SansSerif" size="9" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Invoice #]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="175" y="5" width="130" height="15" forecolor="#FFFFFF"/>
+                <textElement>
+                    <font fontName="SansSerif" size="9" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Patient Name]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="310" y="5" width="90" height="15" forecolor="#FFFFFF"/>
+                <textElement>
+                    <font fontName="SansSerif" size="9" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Date & Time]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="405" y="5" width="50" height="15" forecolor="#FFFFFF"/>
+                <textElement>
+                    <font fontName="SansSerif" size="9" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Method]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="460" y="5" width="45" height="15" forecolor="#FFFFFF"/>
+                <textElement>
+                    <font fontName="SansSerif" size="9" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Status]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="510" y="5" width="40" height="15" forecolor="#FFFFFF"/>
+                <textElement textAlignment="Right">
+                    <font fontName="SansSerif" size="9" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Amount]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+
+    <detail>
+        <band height="20">
+            <textField>
+                <reportElement x="5" y="3" width="80" height="15"/>
+                <textElement>
+                    <font fontName="SansSerif" size="8"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{paymentId}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="90" y="3" width="80" height="15"/>
+                <textElement>
+                    <font fontName="SansSerif" size="8"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{invoiceNumber}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="175" y="3" width="130" height="15"/>
+                <textElement>
+                    <font fontName="SansSerif" size="8"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{patientName}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="310" y="3" width="90" height="15"/>
+                <textElement>
+                    <font fontName="SansSerif" size="8"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{paymentDate}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="405" y="3" width="50" height="15"/>
+                <textElement>
+                    <font fontName="SansSerif" size="8"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{paymentMethod}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="460" y="3" width="45" height="15"/>
+                <textElement>
+                    <font fontName="SansSerif" size="8"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{paymentStatus}]]></textFieldExpression>
+            </textField>
+            <textField pattern="#,##0.00">
+                <reportElement x="510" y="3" width="40" height="15"/>
+                <textElement textAlignment="Right">
+                    <font fontName="SansSerif" size="8"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+            </textField>
+            <line>
+                <reportElement x="0" y="18" width="555" height="1" forecolor="#E0E0E0"/>
+            </line>
+        </band>
+    </detail>
+
+    <pageFooter>
+        <band height="30">
+            <line>
+                <reportElement x="0" y="5" width="555" height="1" forecolor="#2C7A7B"/>
+            </line>
+            <textField>
+                <reportElement x="450" y="10" width="100" height="15" forecolor="#666666"/>
+                <textElement textAlignment="Right">
+                    <font fontName="SansSerif" size="8"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER}]]></textFieldExpression>
+            </textField>
+        </band>
+    </pageFooter>
+
+</jasperReport>

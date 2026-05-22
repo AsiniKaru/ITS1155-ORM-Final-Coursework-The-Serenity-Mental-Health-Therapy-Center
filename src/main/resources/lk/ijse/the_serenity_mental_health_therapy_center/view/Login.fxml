@@ -2,75 +2,96 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="490.0" prefWidth="664.0" style="-fx-background-color: #f0f4f8;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.the_serenity_mental_health_therapy_center.controller.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="524.0" prefWidth="720.0" style="-fx-background-color: #f0f4f8;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.the_serenity_mental_health_therapy_center.controller.LoginController">
    <children>
-      <VBox prefHeight="490.0" prefWidth="664.0">
+      <VBox prefHeight="524.0" prefWidth="720.0">
          <children>
-            <Text fill="#2c7a7b" strokeType="OUTSIDE" strokeWidth="0.0" text="The Serenity Mental Health Therapy Center" textAlignment="CENTER" wrappingWidth="663.73681640625">
+            <Text fill="#2c7a7b" strokeType="OUTSIDE" strokeWidth="0.0" text="Serenity Mental Health Therapy Center" textAlignment="CENTER" wrappingWidth="695.7369079589844">
                <font>
-                  <Font name="Cambria Math" size="48.0" />
+                  <Font name="Calisto MT Bold" size="46.0" />
                </font>
                <VBox.margin>
-                  <Insets top="40.0" />
+                  <Insets left="10.0" top="60.0" />
                </VBox.margin>
             </Text>
-            <VBox prefHeight="354.0" prefWidth="664.0">
+            <VBox prefHeight="382.0" prefWidth="720.0">
                <children>
-                  <HBox prefHeight="123.0" prefWidth="664.0">
+                  <HBox prefHeight="98.0" prefWidth="720.0">
                      <children>
-                        <Label prefHeight="30.0" prefWidth="117.0" text="Username">
+                        <Label prefHeight="30.0" prefWidth="118.0" text="Username">
                            <HBox.margin>
-                              <Insets left="100.0" top="80.0" />
+                              <Insets left="150.0" top="50.0" />
                            </HBox.margin>
                            <font>
                               <Font name="Bodoni MT" size="18.0" />
                            </font>
                         </Label>
-                        <TextField prefHeight="32.0" prefWidth="220.0" style="-fx-border-radius: 10;">
+                        <TextField fx:id="txtUsername" prefHeight="32.0" prefWidth="220.0" promptText="Enter username" style="-fx-border-radius: 10;">
                            <HBox.margin>
-                              <Insets top="80.0" />
+                              <Insets top="50.0" />
                            </HBox.margin>
                         </TextField>
                      </children>
                   </HBox>
-                  <HBox prefHeight="98.0" prefWidth="664.0">
+                  <HBox prefHeight="63.0" prefWidth="720.0">
                      <children>
-                        <Label prefHeight="26.0" prefWidth="118.0" text="Password">
+                        <Label prefHeight="26.0" prefWidth="110.0" text="Password">
                            <HBox.margin>
-                              <Insets left="100.0" top="20.0" />
+                              <Insets left="150.0" top="20.0" />
                            </HBox.margin>
                            <font>
                               <Font name="Bodoni MT" size="18.0" />
                            </font>
                         </Label>
-                        <TextField prefHeight="31.0" prefWidth="222.0" style="-fx-border-radius: 10;">
+                        <Pane prefHeight="63.0" prefWidth="245.0">
+                           <children>
+                              <PasswordField fx:id="passwordField" layoutX="4.0" layoutY="16.0" prefHeight="32.0" prefWidth="220.0" promptText="Enter password" />
+                              <TextField fx:id="passwordTxt" layoutX="4.0" layoutY="16.0" prefHeight="32.0" prefWidth="220.0" />
+                           </children>
+                        </Pane>
+                        <CheckBox fx:id="showPassword" mnemonicParsing="false" onAction="#checkboxPassword" text="show password">
                            <HBox.margin>
-                              <Insets top="20.0" />
+                              <Insets left="15.0" top="25.0" />
                            </HBox.margin>
-                        </TextField>
+                           <font>
+                              <Font name="Cambria" size="14.0" />
+                           </font>
+                        </CheckBox>
                      </children>
                   </HBox>
-                  <HBox prefHeight="118.0" prefWidth="664.0">
+                  <HBox prefHeight="32.0" prefWidth="720.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="198.0" style="-fx-background-color: #2c7a7b;" text="Login" textFill="WHITE">
+                        <Label fx:id="errorMsg" prefHeight="18.0" prefWidth="218.0" textFill="#f40303">
+                           <HBox.margin>
+                              <Insets left="270.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="45.0" prefWidth="720.0">
+                     <children>
+                        <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#handleLogin" prefHeight="38.0" prefWidth="239.0" style="-fx-background-color: #2c7a7b; -fx-background-radius: 8;" text="Login" textFill="WHITE">
                            <font>
                               <Font name="Bodoni MT" size="18.0" />
                            </font>
                            <HBox.margin>
-                              <Insets left="220.0" />
+                              <Insets left="250.0" />
                            </HBox.margin>
                         </Button>
                      </children>
                   </HBox>
+                  <HBox prefHeight="45.0" prefWidth="720.0" />
                </children>
             </VBox>
          </children>

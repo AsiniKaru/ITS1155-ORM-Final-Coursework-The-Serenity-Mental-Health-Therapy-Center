@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="therapist_performance"
+              pageWidth="595"
+              pageHeight="842"
+              columnWidth="555"
+              leftMargin="20"
+              rightMargin="20"
+              topMargin="20"
+              bottomMargin="20"
+              uuid="d7c6d5e4-f3a2-b1c0-d9e8-7f6a5b4c3d2e">
+
+    <parameter name="startDate" class="java.lang.String"/>
+    <parameter name="endDate" class="java.lang.String"/>
+
+    <field name="therapistId" class="java.lang.String"/>
+    <field name="name" class="java.lang.String"/>
+    <field name="specialization" class="java.lang.String"/>
+    <field name="availability" class="java.lang.String"/>
+    <field name="sessionCount" class="java.lang.Integer"/>
+
+    <title>
+        <band height="120">
+            <rectangle>
+                <reportElement x="0" y="0" width="555" height="75" forecolor="#2C7A7B" backcolor="#2C7A7B"/>
+            </rectangle>
+            <staticText>
+                <reportElement x="10" y="10" width="535" height="30" forecolor="#FFFFFF"/>
+                <textElement textAlignment="Center">
+                    <font fontName="SansSerif" size="22" isBold="true"/>
+                </textElement>
+                <text><![CDATA[THE SERENITY MENTAL HEALTH THERAPY CENTER]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="10" y="40" width="535" height="20" forecolor="#FFF6DE"/>
+                <textElement textAlignment="Center">
+                    <font fontName="SansSerif" size="12" isItalic="true"/>
+                </textElement>
+                <text><![CDATA[Therapist Performance & Workload Report]]></text>
+            </staticText>
+
+            <staticText>
+                <reportElement x="5" y="90" width="80" height="20" forecolor="#333333"/>
+                <textElement>
+                    <font fontName="SansSerif" size="10" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Date range:]]></text>
+            </staticText>
+            
+            <textField>
+                <reportElement x="90" y="90" width="300" height="20" forecolor="#333333"/>
+                <textElement>
+                    <font fontName="SansSerif" size="10"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{startDate} + "  to  " + $P{endDate}]]></textFieldExpression>
+            </textField>
+            
+            <line>
+                <reportElement x="0" y="115" width="555" height="1" forecolor="#2C7A7B"/>
+                <graphicElement>
+                    <pen lineWidth="1.5"/>
+                </graphicElement>
+            </line>
+        </band>
+    </title>
+
+    <columnHeader>
+        <band height="25">
+            <rectangle>
+                <reportElement x="0" y="0" width="555" height="25" forecolor="#2C7A7B" backcolor="#2C7A7B"/>
+            </rectangle>
+            <staticText>
+                <reportElement x="5" y="5" width="90" height="15" forecolor="#FFFFFF"/>
+                <textElement>
+                    <font fontName="SansSerif" size="9" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Therapist ID]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="105" y="5" width="150" height="15" forecolor="#FFFFFF"/>
+                <textElement>
+                    <font fontName="SansSerif" size="9" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Name]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="265" y="5" width="130" height="15" forecolor="#FFFFFF"/>
+                <textElement>
+                    <font fontName="SansSerif" size="9" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Specialization]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="405" y="5" width="80" height="15" forecolor="#FFFFFF"/>
+                <textElement>
+                    <font fontName="SansSerif" size="9" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Availability]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="495" y="5" width="55" height="15" forecolor="#FFFFFF"/>
+                <textElement textAlignment="Right">
+                    <font fontName="SansSerif" size="9" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Sessions]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+
+    <detail>
+        <band height="20">
+            <textField>
+                <reportElement x="5" y="3" width="90" height="15"/>
+                <textElement>
+                    <font fontName="SansSerif" size="9"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{therapistId}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="105" y="3" width="150" height="15"/>
+                <textElement>
+                    <font fontName="SansSerif" size="9"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="265" y="3" width="130" height="15"/>
+                <textElement>
+                    <font fontName="SansSerif" size="9"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{specialization}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="405" y="3" width="80" height="15"/>
+                <textElement>
+                    <font fontName="SansSerif" size="9"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{availability}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="495" y="3" width="55" height="15"/>
+                <textElement textAlignment="Right">
+                    <font fontName="SansSerif" size="9"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{sessionCount}]]></textFieldExpression>
+            </textField>
+            <line>
+                <reportElement x="0" y="18" width="555" height="1" forecolor="#E0E0E0"/>
+            </line>
+        </band>
+    </detail>
+
+    <pageFooter>
+        <band height="30">
+            <line>
+                <reportElement x="0" y="5" width="555" height="1" forecolor="#2C7A7B"/>
+            </line>
+            <textField>
+                <reportElement x="450" y="10" width="100" height="15" forecolor="#666666"/>
+                <textElement textAlignment="Right">
+                    <font fontName="SansSerif" size="8"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER}]]></textFieldExpression>
+            </textField>
+        </band>
+    </pageFooter>
+
+</jasperReport>
